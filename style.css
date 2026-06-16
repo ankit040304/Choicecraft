@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+
+:root {
+  --bg-gradient: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+  --glass-bg: rgba(30, 41, 59, 0.7);
+  --text-main: #e2e8f0;
+  --accent-primary: #4ade80;
+  --accent-secondary: #3b82f6;
+  --btn-bg: #22c55e;
+  --btn-text: #064e3b;
+  --transition-speed: 0.3s;
+}
+
+body {
+  background: var(--bg-gradient);
+  color: white;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.game-container {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2.5rem;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.8s ease-out;
+}
+
+h1 {
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.scene-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  display: none; /* Hidden by default */
+  transition: transform 0.5s ease;
+}
+
+.scene-img:hover {
+  transform: scale(1.02);
+}
+
+#story-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  min-height: 80px;
+  color: var(--text-main);
+}
+
+button {
+  display: inline-block;
+  margin: 8px;
+  padding: 12px 24px;
+  background: var(--btn-bg);
+  border: none;
+  color: var(--btn-text);
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0; /* Animated in via JS */
+  animation: slideUp 0.5s forwards;
+}
+
+button:hover {
+  background: var(--accent-primary);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

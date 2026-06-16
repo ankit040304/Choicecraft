@@ -1,0 +1,53 @@
+{
+  "start": {
+    "text": "You wake up in a strange room. A door and a window are in front of you.",
+    "image": "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=500&q=80",
+    "choices": [
+      { "text": "Open the door", "next": "door" },
+      { "text": "Look out the window", "next": "window" }
+    ]
+  },
+
+  "door": {
+    "text": "The door creaks open. You see a dark hallway.",
+    "image": "https://images.unsplash.com/photo-1505672678657-cc7037095e60?auto=format&fit=crop&w=500&q=80",
+    "choices": [
+      { "text": "Walk forward", "next": "end_good" },
+      { "text": "Go back", "next": "start" }
+    ]
+  },
+
+  "window": {
+    "text": "You see a strange creature outside staring at you.",
+    "image": "https://images.unsplash.com/photo-1509248961158-e54f6934749c?auto=format&fit=crop&w=500&q=80",
+    "choices": [
+      { "text": "Run away", "next": "end_bad" }
+    ]
+  },
+
+  "end_good": {
+    "text": "You escaped safely. 🎉",
+    "image": "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=500&q=80",
+    "choices": []
+  },
+
+  "end_bad": {
+    "text": "The creature finds you. Game Over 💀",
+    "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=500&q=80",
+    "choices": []
+  },
+
+  "new_room": {
+    "text": "You found a secret library!",
+    "image": "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=500&q=80",
+    "choices": [
+      { "text": "Read an ancient glowing book", "next": "secret_ending" },
+      { "text": "Leave the room", "next": "start" }
+    ]
+  },
+  "secret_ending": {
+    "text": "The book was a portal! You are now the master of this realm. 👑",
+    "image": "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=500&q=80",
+    "choices": []
+  }
+}
